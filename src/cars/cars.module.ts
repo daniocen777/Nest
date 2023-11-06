@@ -4,6 +4,8 @@ import { CarsService } from './cars.service';
 
 @Module({
   controllers: [CarsController],
-  providers: [CarsService]
+  providers: [CarsService],
+  // Exportarlo para que pueda ejecutarse los seeds
+  exports: [CarsService]
 })
-export class CarsModule {}
+export class CarsModule { }

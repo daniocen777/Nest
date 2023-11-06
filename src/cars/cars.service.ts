@@ -9,21 +9,11 @@ import { CreateCarDto, UpdateCarDto } from './dto';
 export class CarsService {
 
     private cars: Car[] = [
-        {
+        /* {
             id: uuidv4(),
             brand: 'Toyota',
             model: 'Corola'
-        },
-        {
-            id: uuidv4(),
-            brand: 'Honda',
-            model: 'Civic'
-        },
-        {
-            id: uuidv4(),
-            brand: 'Jeep',
-            model: 'Cherokee'
-        },
+        }, */
     ];
 
     findAll() {
@@ -69,5 +59,10 @@ export class CarsService {
     delete(id: string) {
         const car = this.findOneById(id);
         this.cars = this.cars.filter((car: Car) => car.id !== id);
+    }
+
+    // Llenar la BD con la semilla (exportar el modulo para que modulo seed pueda usarlo)
+    fillCarsWithSeedData(cars: Car[]) {
+        this.cars = cars;
     }
 }
